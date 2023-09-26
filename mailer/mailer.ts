@@ -3,15 +3,15 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
 	service: "gmail",
 	auth: {
-		user: "marcofernandezc@outlook.com",
-		pass: "jqjsdzegtlpnahxn",
+		user: "fernandezcmarco7@gmail.com",
+		pass: "mudqflntveoeqwtl",
 	},
-	from: "marcofernandezc@outlook.com",
+	from: "fernandezcmarco7@gmail.com",
 });
 
 export const sendEmail = async (to: string, code: string): Promise<void> => {
 	const mailOpt = {
-		from: '"Nvidia" marcofernandezc@outlook.com',
+		from: '"Nvidia" fernandezcmarco7@gmail.com',
 		to,
 		subject: "Código de Validación Nvidia",
 		text: `
