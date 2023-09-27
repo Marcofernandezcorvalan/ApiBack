@@ -68,14 +68,14 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 //Verified
 
 export const isVerified = async (req: Request, res: Response) => {
-	const { email, code } = req.body;
+	const { code } = req.body;
 
 	try {
-		const user = await User.findOne({ email });
+		const user = await User.findOne({ code });
 
 		if (!user) {
 			res.status(404).json({
-				msg: "Mail no encontrado en la base de datos",
+				msg: "Código no encontrado en la base de datos",
 			});
 			return;
 		}
@@ -94,10 +94,10 @@ export const isVerified = async (req: Request, res: Response) => {
 			return;
 		}
 
-		await User.findOneAndUpdate({ email }, { verified: true });
+		await User.findOneAndUpdate({ code }, { verified: true });
 
 		res.status(200).json({
-			msg: "Usuario Verificado",
+			msg: "Verificado con Éxito",
 		});
 	} catch (error) {
 		console.log(error);

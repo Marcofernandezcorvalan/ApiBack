@@ -32,7 +32,8 @@ router.post(
 	[
 		check("email", "Mail obligatorio").not().isEmpty(),
 		check("email", "Mail no válido").isEmail(),
-		check("password", "La contraseña debe ser de 7 caracteres mínimo").isLength({ min: 7 }).not().isEmpty(),
+		check("password", "Contraseña Obligatoria").not().isEmpty(),
+		check("password", "La contraseña debe ser de 7 caracteres mínimo").isLength({ min: 7 }),
 		catchErrors,
 	],
 	login
@@ -43,8 +44,8 @@ router.post(
 router.patch(
 	"/verified",
 	[
-		check("email", "Mail obligatorio").not().isEmpty(),
-		check("email", "Mail no válido").isEmail(),
+		// check("email", "Mail obligatorio").not().isEmpty(),
+		// check("email", "Mail no válido").isEmail(),
 		check("code", "El código es Obligatorio").not().isEmpty(),
 		catchErrors,
 	],
