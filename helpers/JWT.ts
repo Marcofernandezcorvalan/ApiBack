@@ -6,9 +6,9 @@ export const jwtgenerator = (id: string = ""): Promise<string> => {
 
 		jwt.sign(
 			payload,
-			process.env.PASS as string,
+			process.env.JWT_PASS as string,
 			{
-				expiresIn: "7h",
+				expiresIn: "4h",
 			},
 			(err: Error | null, token: string | undefined) => {
 				if (err) {

@@ -2,16 +2,22 @@ import express, { Express } from "express";
 import cors from "cors";
 import authRoutes from "../routes/auth";
 import { dbConect } from "../database/config";
+import productsRoutes from "../routes/products";
+import ordersRoutes from "../routes/orders";
 
 export class Server {
 	app: Express;
 	port: string | number | undefined;
 	authPath: string;
+	productPath: string;
+	ordersPath: string;
 
 	constructor() {
 		this.app = express();
 		this.port = process.env.PORT;
 		this.authPath = "/auth";
+		this.productPath = "/products";
+		this.ordersPath = "/orders";
 
 		this.conectDB();
 		this.middlewares();
@@ -29,6 +35,8 @@ export class Server {
 
 	routes(): void {
 		this.app.use(this.authPath, authRoutes);
+		this.app.use(this.ordersPath, ordersRoutes);
+		this.app.use(this.productPath, productsRoutes);
 	}
 
 	listen(): void {

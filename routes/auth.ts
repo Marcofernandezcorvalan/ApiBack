@@ -21,10 +21,6 @@ router.post(
 	register
 );
 
-//Register
-
-router.get("/products", getData);
-
 //Login
 
 router.post(
@@ -41,15 +37,6 @@ router.post(
 
 //Verified
 
-router.patch(
-	"/verified",
-	[
-		// check("email", "Mail obligatorio").not().isEmpty(),
-		// check("email", "Mail no válido").isEmail(),
-		check("code", "El código es Obligatorio").not().isEmpty(),
-		catchErrors,
-	],
-	isVerified
-);
+router.patch("/verified", [check("code", "El código es Obligatorio").not().isEmpty(), catchErrors], isVerified);
 
 export default router;
