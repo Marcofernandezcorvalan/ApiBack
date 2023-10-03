@@ -5,7 +5,7 @@ interface IItem {
 	name: String;
 	price: Number;
 	quantity: Number;
-	img?: String;
+	img: String;
 }
 
 interface IShippingDetails {
@@ -65,6 +65,10 @@ const OrderSchema = new Schema<IOrder>({
 
 				quantity: {
 					type: Number,
+					required: true,
+				},
+				img: {
+					type: String,
 					required: true,
 				},
 			},
