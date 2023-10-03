@@ -5,6 +5,7 @@ interface IItem {
 	name: String;
 	price: Number;
 	quantity: Number;
+	img?: String;
 }
 
 interface IShippingDetails {
