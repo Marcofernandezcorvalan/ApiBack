@@ -1,6 +1,6 @@
 import { Model, Schema, Types, model } from "mongoose";
 
-interface IItem {
+export interface IItem {
 	id: Number;
 	name: String;
 	price: Number;
@@ -8,7 +8,7 @@ interface IItem {
 	img: String;
 }
 
-interface IShippingDetails {
+export interface IShippingDetails {
 	name: String;
 	cellphone: String;
 	location: String;
