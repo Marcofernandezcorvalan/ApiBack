@@ -4,6 +4,7 @@ import authRoutes from "../routes/auth";
 import { dbConect } from "../database/config";
 import productsRoutes from "../routes/products";
 import ordersRoutes from "../routes/orders";
+import homeRoutes from "../routes/home";
 
 export class Server {
 	app: Express;
@@ -11,6 +12,7 @@ export class Server {
 	authPath: string;
 	productPath: string;
 	ordersPath: string;
+	homePath: string;
 
 	constructor() {
 		this.app = express();
@@ -18,6 +20,7 @@ export class Server {
 		this.authPath = "/auth";
 		this.productPath = "/products";
 		this.ordersPath = "/orders";
+		this.homePath = "/";
 
 		this.conectDB();
 		this.middlewares();
@@ -37,6 +40,7 @@ export class Server {
 		this.app.use(this.authPath, authRoutes);
 		this.app.use(this.ordersPath, ordersRoutes);
 		this.app.use(this.productPath, productsRoutes);
+		this.app.use(this.homePath, homeRoutes);
 	}
 
 	listen(): void {
