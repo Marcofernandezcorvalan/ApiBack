@@ -7,7 +7,7 @@ import { jwtgenerator } from "../helpers/JWT";
 
 //Register
 
-export const register = async (req: Request, res: Response) => {
+export const register = async (req: Request, res: Response): Promise<void> => {
 	const { name, email, password }: IUser = req.body;
 
 	const user = new User({ name, email, password });
@@ -67,7 +67,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
 //Verified
 
-export const isVerified = async (req: Request, res: Response) => {
+export const isVerified = async (req: Request, res: Response): Promise<void> => {
 	const { code } = req.body;
 
 	try {

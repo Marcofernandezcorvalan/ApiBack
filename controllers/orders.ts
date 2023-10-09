@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { ObjectId } from "mongoose";
-import Order, { IItem, IOrder, IShippingDetails } from "../models/orders";
+import Order, { IItem, IOrder } from "../models/orders";
 
-export const getOrders = async (req: Request, res: Response) => {
+export const getOrders = async (req: Request, res: Response): Promise<void> => {
 	const userID: ObjectId = req.body.validUser._id;
 
 	const consulta = { user: userID };
@@ -14,7 +14,7 @@ export const getOrders = async (req: Request, res: Response) => {
 	});
 };
 
-export const createOrder = async (req: Request, res: Response) => {
+export const createOrder = async (req: Request, res: Response): Promise<void> => {
 	const orderData: IOrder = req.body;
 	const userID: ObjectId = req.body.validUser._id;
 
