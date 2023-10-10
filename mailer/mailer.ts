@@ -18,10 +18,10 @@ export const sendEmail = async (to: string, code: string): Promise<void> => {
 	const mailOpt = {
 		from: '"Nvidia" fernandezcmarco7@gmail.com',
 		to,
-		subject: "Código de Validación Nvidia",
+		subject: "Código de Verificación Nvidia",
 		text: `
-            Código de verificación de Nvidia.
-            Code: ${code}
+        	Su código de verificación Nvidia.
+        	Code: ${code}
         `,
 	};
 

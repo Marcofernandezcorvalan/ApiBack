@@ -3,7 +3,6 @@ import { isVerified, login, register } from "../controllers/auth";
 import { check } from "express-validator";
 import { catchErrors } from "../middlewares/catchErr";
 import { existsEmail } from "../helpers/validationsDB";
-import { getData } from "../controllers/product";
 
 const router = Router();
 
