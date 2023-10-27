@@ -35,10 +35,10 @@ const OrderSchema = new Schema<IOrder>({
 		ref: "User",
 		required: true,
 	},
-	price: {
-		type: Number,
-		required: true,
-	},
+	// price: {
+	// 	type: Number,
+	// 	required: true,
+	// },
 	total: {
 		type: Number,
 		required: true,
