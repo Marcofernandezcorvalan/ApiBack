@@ -20,7 +20,7 @@ export interface IOrder {
 	user: Types.ObjectId;
 	price: Number;
 	items: IItem[];
-	shippingDetails: IShippingDetails[];
+	shippingDetails: IShippingDetails;
 	total: Number;
 	status: String;
 }
